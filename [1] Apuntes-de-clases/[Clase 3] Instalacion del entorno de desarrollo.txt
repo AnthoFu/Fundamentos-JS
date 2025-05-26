@@ -1,0 +1,7 @@
+En esta clase se muestra como descargar e instalar VScode y NodeJS para trabajar en este curso.
+
+Link de descarga de VScode:
+https://code.visualstudio.com/download
+
+Link de descarga de NodeJS:
+https://nodejs.org/en/download
