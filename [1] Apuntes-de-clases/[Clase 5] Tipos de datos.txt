@@ -1,0 +1,100 @@
+En JavaScript existen 10 tipos de datos, divididos en dos grupos: primitivos y complejos.
+
+1. Tipos de datos primitivos
+
+1.1 String: Almacena cadenas de texto.
+1.2 Number: Almacena números.
+1.3 Boolean: Almacena valores true o false.
+1.4 Null: Representa un valor nulo.
+1.5 Undefined: Representa un valor no definido.
+1.6 Symbol: Almacena valores únicos.
+1.7 BigInt: Almacena números muy grandes.
+
+2. Tipos de datos complejos
+
+2.1 Object: Almacena colecciones de datos.
+2.2 Array: Almacena listas ordenadas de datos, técnicamente un tipo de objeto.
+2.3 Function: Almacena funciones, que son bloques de código reutilizables.
+
+3. Características de los tipos de datos
+
+3.1 Primitivos:
+3.1.1 Inmutables: No cambian el valor original.
+3.1.2 Se pasan por valor: Se copian al asignarse a otra variable.
+
+3.2 Complejos:
+3.2.1 Mutables: Pueden cambiar el valor original.
+3.2.2 Se pasan por referencia: Referencian la misma ubicación en memoria.
+
+4. Mutabilidad e inmutabilidad
+
+4.1 Datos primitivos (Inmutables)
+4.1.1 Ejemplo con números:
+
+let numero = 23;
+numero = numero + 10; // Nuevo valor: 33
+console.log(numero); // Imprime 33
+
+4.1.2 Ejemplo con booleanos:
+
+
+let esVerdadero = true;
+esVerdadero = false; // Nuevo valor: false
+console.log(esVerdadero); // Imprime false
+Datos complejos (Mutables)
+
+4.1.3 Ejemplo con objetos:
+
+
+let usuario = {
+  nombre: "Pepito",
+  edad: 15
+};
+usuario.edad = 20; // Modifica el valor original
+console.log(usuario); // Imprime { nombre: "Pepito", edad: 20 }
+
+4.1.4 Ejemplo con arrays:
+
+
+let frutas = ["manzana", "pera"];
+frutas[0] = "sandía"; // Modifica el valor original
+console.log(frutas); // Imprime ["sandía", "pera"]
+
+Funciones y mutabilidad
+
+4.1.5 Ejemplo de función que modifica un objeto:
+
+
+function cambiarNombre(objeto) {
+  objeto.nombre = "Nuevo Nombre";
+}
+
+let persona = {
+  nombre: "Antonio"
+};
+
+cambiarNombre(persona);
+console.log(persona); // Imprime { nombre: "Nuevo Nombre" }
+
+5. Buenas prácticas en nombramiento de variables
+
+5.1 Evitar nombres ambiguos como C, D, A.
+5.2 Usar nombres descriptivos y claros.
+5.3 Utilizar abreviaciones conocidas y aceptadas como URL o ID.
+
+5.4 Ejemplos no permitidos:
+
+5.4.1 let C = "Woody"; - No descriptivo.
+5.4.2 let CDA = "Caja de Andy"; - Puede ser ambiguo.
+
+5.5 Ejemplos permitidos:
+
+5.5.1 let primerTrasteoDeAndy = "Caja de Andy"; - Descriptivo y claro.
+5.5.2 let urlUsuario = "<https://example.com>"; - Abreviación conocida.
+5.5.3 let idUsuario = 12345; - Abreviación conocida.
+
+6.Conclusión
+
+* Utilizar let para variables que cambian con el tiempo.
+* Utilizar const para variables constantes.
+* Seguir buenas prácticas en el nombramiento de variables para mantener un código claro y comprensible.
