@@ -1,0 +1,34 @@
+*{
+    margin: 0;
+    padding: 0;
+    background-color: rgb(31, 28, 28);
+    color: white;
+}
+
+section{
+    height: 100vh;
+    text-align: center;
+    align-content: center;
+}
+
+h1{
+    margin-bottom: 20px;
+    font-size: xx-large;
+}
+
+h2{
+    margin-bottom: 20px;
+}
+
+#container{
+    justify-self: center;
+    width: 600px;
+    padding: 30px;
+    border: 2px solid white;
+    border-radius: 30px;
+}
+
+#numeroAdivinar::placeholder{
+    font-size: 10px;
+    color: white;
+}
