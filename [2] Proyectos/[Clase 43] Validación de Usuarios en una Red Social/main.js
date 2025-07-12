@@ -7,7 +7,7 @@ Requerimientos del reto:
 4. Si el usuario y contraseña son incorrectos, el sistema debe mostrar un mensaje de error y no mostrar ningun timeline
 */
 
-// TODO: Falta todavia realizar mostrar el timeline, el mensaje de bienvenida y el mensaje de error de forma visual para el usuario.
+// TODO: Falta realizar la parte visual. El CSS. Toda la logica en teoria esta lista. ;)
 
 const usersDatabase=[
     {
@@ -28,7 +28,7 @@ const usersDatabase=[
 const usersTimeline=[
     {
         username:"Sthefanny",
-        timeline:"Me encata Javascript!"
+        timeline:"Me encanta Javascript!"
     },
     {
         username:"Robert",
@@ -46,8 +46,19 @@ const usersTimeline=[
 
 
 const usernameInput = document.getElementById('username')
+
 const passwordInput = document.getElementById('password')
+
 const formularioLogin = document.getElementById('login')
+
+const seccionLogin = document.getElementById('loginSection')
+
+const seccionTimeline = document.getElementById('timelineSection')
+
+const span = document.createElement('span')
+
+const postContainer = document.createElement('div')
+
 
 formularioLogin.addEventListener('submit', (event)=> {
     event.preventDefault()
@@ -61,11 +72,29 @@ formularioLogin.addEventListener('submit', (event)=> {
         if (username === user.username && password === user.password){
             console.log('Exito en login')
             loged = true
+            ocultarLogin()
+            mostrarTimeline()
             return loged
         }
     }
 
     if (!loged){
         console.log('Fallo en el login')
+        span.textContent = 'Contraseña o usuario invalido'
+        formularioLogin.appendChild(span)
     }
 })
+
+function ocultarLogin() {
+    seccionLogin.style.display='none'
+    console.log('[OcultarLogin]: Activado')
+}
+
+function mostrarTimeline(){
+    for (const post of usersTimeline){
+        const postContainer = document.createElement('div')
+        postContainer.innerText = `${post.username} ha comentado: ${post.timeline}`
+
+        seccionTimeline.appendChild(postContainer)
+    }
+}
