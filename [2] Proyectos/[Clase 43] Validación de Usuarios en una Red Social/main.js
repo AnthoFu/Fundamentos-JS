@@ -81,6 +81,7 @@ formularioLogin.addEventListener('submit', (event)=> {
     if (!loged){
         console.log('Fallo en el login')
         span.textContent = 'Contraseña o usuario invalido'
+        span.className = 'error'
         formularioLogin.appendChild(span)
     }
 })
@@ -91,10 +92,19 @@ function ocultarLogin() {
 }
 
 function mostrarTimeline(){
+
+    const bienvenida = '¡Bienvenido! Estas son tus ultimas notificaciones:'
+    const bienvenidaContainer = document.createElement('div')
+    bienvenidaContainer.innerText = bienvenida
+    bienvenidaContainer.className = 'title'
+
+    seccionTimeline.appendChild(bienvenidaContainer)
     for (const post of usersTimeline){
         const postContainer = document.createElement('div')
         postContainer.innerText = `${post.username} ha comentado: ${post.timeline}`
-
+        postContainer.className = 'notification'
         seccionTimeline.appendChild(postContainer)
     }
+
+
 }
